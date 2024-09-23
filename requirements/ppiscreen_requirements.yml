@@ -199,4 +199,4 @@ dependencies:
   - zlib=1.2.13=h4ab18f5_6
   - zstandard=0.22.0=py312h2c38b39_0
   - zstd=1.5.5=hfc55251_0
-prefix: /home/millerklugman.a/miniconda3/envs/ppiscreen
+prefix: /home/miniconda3/envs/ppiscreen
