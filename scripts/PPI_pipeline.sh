@@ -8,49 +8,59 @@
 #SBATCH --partition=gpu                  # Sets partition to run on GPU
 #SBATCH --gres=gpu:a100:1                # Request 1 GPU
 #SBATCH --mail-type=ALL                  # Get email notifications for job start, end, etc.
-#SBATCH --mail-user=      # email
+#SBATCH --mail-user= # email
 
 # Load necessary modules (adjust based on your environment)
-module load cuda/12.1    # Load CUDA (if GPU version is used)
-module load miniconda3   # Load Miniconda
+module load cuda/12.1  # Load CUDA (if GPU version is used)
+module load miniconda3 # Load Miniconda
 module load gcc/9.2.0
 module list
 
 # Initialize Conda
-source <path/to/conda>
+source <path/to/miniconda3/etc/profile.d/conda.sh>
 
 # Activate ColabFold environment
 echo "Activating ColabFold environment..."
 conda activate colabfold
 
-# 1. Run the Python script to generate dimer FASTA files
+# 1. Run the Python script to generate FASTA files from input csv
+echo "Running Python script to generate FASTA files..."
+python <path/to/get_fasta.py>
+echo "FASTA generation complete."
+
+# 2. Run the Python script to generate dimer FASTA files
 echo "Running Python script to generate dimers..."
-python <path/to/combine_fasta.py> > /dev/null 2>&1
+python </path/to/combine_fasta.py> >/dev/null 2>&1
 echo "Dimer generation complete."
 
-# 2. Run the SLURM script to process the dimers with ColabFold
+# 3. Run the SLURM script to process the dimers with ColabFold
 echo "Running ColabFold on the generated dimers..."
-bash <path/to/colabfold_iterate.sh>
+bash </path/to/colabfold_iterate.sh>
 echo "ColabFold processing complete."
 
-# 3. Move the relaxed PDB files to the PARP3_dimer_model_relax directory
+# 4. Move the relaxed PDB files to the PARP3_dimer_model_relax directory
 echo "Moving relaxed PDB files to the PARP3_dimer_model_relax directory..."
 python <path/to/move_relax_model.py>
 echo "Relaxed PDB files moved."
 
-# 4. Deactivate the Conda environment and change to PPIScreen
+# 5. Deactivate the Conda environment and change to PPIScreen
 echo "Deactivating ColabFold environment..."
 conda deactivate
 echo "Switching to PPIScreen environment..."
 conda activate ppiscreen
+export PATH=<path/to/miniconda3/envs/ppiscreen/bin>:$PATH
 
+# 6. Switch to the PPIScreenML directory
+echo "Switching to PPIScreenML directory..."
+cd </path/to/PPIscreenML>
+echo "Switched to PPIScreenML directory."
 
-# 5. Run the PPIScreenML tool
+# 7. Run the PPIScreenML tool
 echo "Running PPIScreenML on the generated dimers..."
 python <path/to/get_classification.py> \
-	--working_directory <path/to/working/dir> \
-	--protein1_chains_input A \
-	--protein2_chains_input B \
-	--csv_name interaction_all_proteins.csv 
+    --working_directory <path/to/working/dir> \
+    --protein1_chains_input A \
+    --protein2_chains_input B \
+    --csv_name interaction_all_proteins_vs.csv >/dev/null
 echo "PPIScreenML processing complete."
 echo "All jobs completed."
