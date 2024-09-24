@@ -1,0 +1,1 @@
+This directory contains a sample test data input for an example of format. All protein names should be according to the Uniprot label as the code pulls the fasta file from Uniprot. The input should be a .csv file with all protein names in the first column and nothing else. 
