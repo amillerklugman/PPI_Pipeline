@@ -7,7 +7,7 @@
 #SBATCH --time=8:00:00                   # Maximum run time
 #SBATCH --partition=short                  # Sets partition to run on CPU
 #SBATCH --mail-type=ALL                  # Get email notifications for job start, end, etc.
-#SBATCH --mail-user=millerklugman.a@northeastern.edu # email
+#SBATCH --mail-user= # email
 
 # Load necessary modules (adjust based on your environment)
 module load miniconda3 # Load Miniconda
