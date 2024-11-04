@@ -2,9 +2,9 @@ import os
 import tempfile
 
 # Define your directories and parameters
-fasta_directory = "/work/daylab/andrew/millerklugman.a/opt/localcolabfold/outputdir//PARP3_interactors"  # Change to your FASTA files directory
-parp3_fasta_path = "/work/daylab/andrew/millerklugman.a/opt/localcolabfold/inputseq/PARP3.fasta"  # Path to your PARP3 FASTA file
-output_directory = "/work/daylab/andrew/millerklugman.a/opt/localcolabfold/outputdir//PARP3_dimers"  # Directory to save dimer FASTA files
+fasta_directory = "<path/to/target_interactors>"  # Change to your FASTA files directory
+parp3_fasta_path = "<path/to/target.fasta>"  # Path to your target protein FASTA file
+output_directory = "<path/to/target_dimers>"  # Directory to save dimer FASTA files
 
 # Create the output directory if it doesn't exist
 if not os.path.exists(output_directory):
