@@ -1,19 +1,19 @@
 # Initialize Conda 
-source /work/daylab/andrew/millerklugman.a/miniconda3/etc/profile.d/conda.sh
+source <path/to/miniconda3/etc/profile.d/conda.sh>
 
 # Activate ColabFold environment
 conda activate colabfold
 
 # Explicitly set the Conda environment Python to be used
-export PATH=/work/daylab/andrew/millerklugman.a/miniconda3/envs/colabfold/bin:$PATH
+export PATH=<path/to/miniconda3/envs/colabfold/bin:$PATH>
 
 # Add the correct directory where hhsearch is located to PATH
-export PATH=/work/daylab/andrew/millerklugman.a/opt/hh-suite-3.2.0/build/src/:$PATH
+export PATH=<path/to/opt/hh-suite-3.2.0/build/src/:$PATH>
 
 # Define directories for A3M and PDB files and output
-parp3_mmseq_directory="/work/daylab/andrew/millerklugman.a/opt/localcolabfold/outputdir//PARP3_MMSEQ"  # Directory with A3M and PDB files
-output_dir="/work/daylab/andrew/millerklugman.a/opt/localcolabfold/outputdir//PARP3_dimer_models"
-LOCALPDBPATH="/work/daylab/andrew/millerklugman.a/opt/localcolabfold/database/pdb/divided"
+parp3_mmseq_directory="<path/to/target_MMSEQ>"  # Directory with A3M and PDB files
+output_dir="<path/to/target_dimer_models>"
+LOCALPDBPATH="<path/to/localcolabfold/database/pdb/divided>"
 random_seed=0  # Random seed
 
 # Iterate over each A3M file and find the corresponding PDB file
@@ -35,7 +35,7 @@ for a3m_file in "$parp3_mmseq_directory"/*.a3m; do
             echo "Running ColabFold on $a3m_file with PDB hits from $pdb_hit_file"
             
             # Run localcolabfold with appropriate arguments for each A3M and matching PDB file
-            /work/daylab/andrew/millerklugman.a/opt/localcolabfold/colabfold-conda/bin/colabfold_batch \
+            <path/to/localcolabfold/colabfold-conda/bin/colabfold_batch> \
                 --amber \
                 --num-recycle 8 \
                 --num-relax 2 \
