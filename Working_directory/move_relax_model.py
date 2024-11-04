@@ -2,8 +2,8 @@ import os
 import shutil
 
 # Define source and destination directories
-source_dir = '/work/daylab/andrew/millerklugman.a/opt/localcolabfold/outputdir//PARP3_dimer_models'
-destination_dir = '/work/daylab/andrew/millerklugman.a/opt/localcolabfold/outputdir//PARP3_dimer_model_relax'
+source_dir = '<path/to/target_dimer_models>'
+destination_dir = '<path/to/target_dimer_model_relax>'
 
 # Create destination directory if it doesn't exist
 os.makedirs(destination_dir, exist_ok=True)
