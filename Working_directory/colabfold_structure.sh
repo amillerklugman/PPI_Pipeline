@@ -11,13 +11,13 @@ export PATH=<path/to/miniconda3/envs/colabfold/bin:$PATH>
 export PATH=<path/to/opt/hh-suite-3.2.0/build/src/:$PATH>
 
 # Define directories for A3M and PDB files and output
-parp3_mmseq_directory="<path/to/target_MMSEQ>"  # Directory with A3M and PDB files
+target_mmseq_directory="<path/to/target_MMSEQ>"  # Directory with A3M and PDB files
 output_dir="<path/to/target_dimer_models>"
 LOCALPDBPATH="<path/to/localcolabfold/database/pdb/divided>"
 random_seed=0  # Random seed
 
 # Iterate over each A3M file and find the corresponding PDB file
-for a3m_file in "$parp3_mmseq_directory"/*.a3m; do
+for a3m_file in "$target_mmseq_directory"/*.a3m; do
     if [[ -f "$a3m_file" ]]; then
         # Extract base filename to find the corresponding PDB file
         base_name=$(basename "$a3m_file" .a3m)
