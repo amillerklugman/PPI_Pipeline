@@ -15,7 +15,7 @@ module load gcc/9.2.0
 module list
 
 # Initialize Conda
-source /work/daylab/andrew/millerklugman.a/miniconda3/etc/profile.d/conda.sh
+source <path/to/conda/install>
 
 # Activate ColabFold environment
 echo "Activating ColabFold environment..."
@@ -23,15 +23,15 @@ conda activate colabfold
 
 # 1. Run the Python script to generate FASTA files from input csv
 echo "Running Python script to generate FASTA files..."
-python /work/daylab/andrew/millerklugman.a/opt/localcolabfold/outputdir//get_fasta.py
+python <path/to/get_fasta.py>
 echo "FASTA generation complete."
 
 # 2. Run the Python script to generate dimer FASTA files
 echo "Running Python script to generate dimers..."
-python /work/daylab/andrew/millerklugman.a/opt/localcolabfold/outputdir//combine_fasta.py >/dev/null 2>&1
+python <path/to/combine_fasta.py> >/dev/null 2>&1
 echo "Dimer generation complete."
 
 # 3. Run the colabfold_search to generat M8 and a3m files
 echo "Running colabfold_search..."
-bash /work/daylab/andrew/millerklugman.a/opt/localcolabfold/outputdir//colabfold_search.sh 
+bash <path/to/colabfold_search.sh> 
 echo "colabfold_search complete."
