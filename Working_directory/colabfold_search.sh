@@ -1,8 +1,8 @@
-DATABASE_PATH="/work/daylab/andrew/millerklugman.a/opt/localcolabfold/database"
-INPUT_DIR="/work/daylab/andrew/millerklugman.a/opt/localcolabfold/outputdir//PARP3_dimers"
-OUTPUT_DIR="/work/daylab/andrew/millerklugman.a/opt/localcolabfold/outputdir//PARP3_MMSEQ"
+DATABASE_PATH="<path/to/localcolabfold/database>"
+INPUT_DIR="<path/to/target_dimers>"
+OUTPUT_DIR="<path/to/target_MMSEQ>"
 
-/work/daylab/andrew/millerklugman.a/opt/localcolabfold/colabfold-conda/bin/colabfold_search \
+<path/to/localcolabfold/colabfold-conda/bin/colabfold_search> \
     --use-env 1 \
     --use-templates 1 \
     --db-load-mode 2 \
