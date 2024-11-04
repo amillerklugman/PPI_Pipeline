@@ -7,7 +7,7 @@ Conda environments have been added and can be downloaded once the path in the ym
 
 ## Usage 
 ### Installation 
-The conda environments in the [requirements](https://github.com/amillerklugman/PPI_Pipeline/tree/main/requirements) can be cloned into the WSL enviroment and installed
+The conda environments in the [requirements](https://github.com/amillerklugman/PPI_Pipeline/tree/main/requirements) can be cloned into the WSL environment and installed
 ```
 # Download the yml files for the coda environments into your machine
 wget https://github.com/amillerklugman/PPI_Pipeline/blob/e030d08c648792e484c24bbf8038f8e1ffe79604/requirements/colabfold_requirements.yml \
@@ -16,6 +16,11 @@ wget https://github.com/amillerklugman/PPI_Pipeline/blob/e030d08c648792e484c24bb
 # Create a conda environment for each program
 conda env create -f colabfold_requirements.yml.
 conda env create -f ppiscreen_requirements.yml
+```
+
+PPIScreenML can be downloaded from https://github.com/victoria-mischley/PPIScreenML (Mischley et al 2024). You will need to install PyRosetta https://www.pyrosetta.org/downloads with the instructions listed on the PPIScreenML directory. Installation of hh-suite is also required https://github.com/soedinglab/hh-suite 
+```
+conda install -c conda-forge -c bioconda hhsuite
 ```
 
 ### Input Files
