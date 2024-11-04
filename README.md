@@ -23,6 +23,8 @@ PPIScreenML can be downloaded from https://github.com/victoria-mischley/PPIScree
 conda install -c conda-forge -c bioconda hhsuite
 ```
 
+Localcolabfold is an implementation of colabfold meant to run on a local machine for high-throughput analysis. Localcolabfold was developed by [YoshitakaMo](https://github.com/YoshitakaMo/localcolabfold) as a extension of the work of [Mirdita M, Schütze K, Moriwaki Y, Heo L, Ovchinnikov S and Steinegger M.](https://github.com/sokrypton/ColabFold) A detailed explanation of installing localcolabfold can be found on the programs GitHub repository. If you are planning on high-throughput analysis make sure to follow the steps pertaining to colabfold_Search with instrucutions to download the reference databases at https://colabfold.mmseqs.com/  
+
 ### Input Files
 The scripts use a csv file as input to create individual fasta files for each screened protein. The input csv should be formatted as follows with the first column containing the names of the screening proteins. The csv file should only contain the protein names as the IDs and Fasta are found using get_fasta.py
 ![image](https://github.com/user-attachments/assets/057aae59-156f-4b24-8783-80534ff4377b)
