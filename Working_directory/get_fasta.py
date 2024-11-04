@@ -35,7 +35,7 @@ def fetch_fasta_from_csv(csv_file_path, output_directory):
             protein_name = row[0].strip()  # Assuming the first column contains the protein name
             get_fasta(protein_name, output_directory)
 # define directories 
-csv_file_path = "/work/daylab/andrew/millerklugman.a/opt/localcolabfold/inputseq/test_seq9.csv"  # Path to the CSV file containing protein names
-output_directory = "/work/daylab/andrew/millerklugman.a/opt/localcolabfold/outputdir//PARP3_interactors"  # Output directory to save the FASTA files
+csv_file_path = "<path/to/input/csv.csv>"  # Path to the CSV file containing protein names
+output_directory = "<path/to/target_interactors>"  # Output directory to save the FASTA files
 
 fetch_fasta_from_csv(csv_file_path, output_directory)
