@@ -8,7 +8,7 @@
 #SBATCH --partition=gpu                  # Sets partition to run on GPU
 #SBATCH --gres=gpu:v100-sxm2:1           # Sets GPU type to A100
 #SBATCH --mail-type=ALL                  # Get email notifications for job start, end, etc.
-#SBATCH --mail-user=millerklugman.a@northeastern.edu # email
+#SBATCH --mail-user= # email
 
 # Load necessary modules (adjust based on your environment)
 module load cuda/12.1
