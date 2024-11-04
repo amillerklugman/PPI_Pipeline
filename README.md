@@ -7,5 +7,5 @@ Conda environments have been added and can be downloaded once the path in the ym
 
 ## Usage 
 ### Input Files
-The scripts use a csv file as input to create individual fasta files for each screened protein. The input csv should be formatted as follows with the first column containing the names of the screening proteins. 
+The scripts use a csv file as input to create individual fasta files for each screened protein. The input csv should be formatted as follows with the first column containing the names of the screening proteins. The csv file should only contain the protein names as the IDs and Fasta are found using get_fasta.py
 ![image](https://github.com/user-attachments/assets/057aae59-156f-4b24-8783-80534ff4377b)
