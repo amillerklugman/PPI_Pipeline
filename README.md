@@ -16,7 +16,7 @@ wget https://github.com/amillerklugman/PPI_Pipeline/blob/e030d08c648792e484c24bb
      https://github.com/amillerklugman/PPI_Pipeline/blob/e030d08c648792e484c24bbf8038f8e1ffe79604/requirements/ppiscreen_requirements.yml
 
 # Create a conda environment for each program
-conda env create -f colabfold_requirements.yml.
+conda env create -f colabfold_requirements.yml
 conda env create -f ppiscreen_requirements.yml
 ```
 
