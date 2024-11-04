@@ -21,7 +21,7 @@ for a3m_file in "$target_mmseq_directory"/*.a3m; do
     if [[ -f "$a3m_file" ]]; then
         # Extract base filename to find the corresponding PDB file
         base_name=$(basename "$a3m_file" .a3m)
-        pdb_hit_file="$parp3_mmseq_directory/${base_name}_pdb100_230517.m8"
+        pdb_hit_file="$target_mmseq_directory/${base_name}_pdb100_230517.m8"
 
         # Check if any relaxed PDB file already exists in the output directory
         relaxed_pdb_files=($(find "$output_dir" -type f -name "${base_name}*_relaxed_*.pdb"))
@@ -51,7 +51,7 @@ for a3m_file in "$target_mmseq_directory"/*.a3m; do
             echo "PDB hit file not found for $a3m_file: $pdb_hit_file"
         fi
     else
-        echo "No A3M files found in $parp3_mmseq_directory"
+        echo "No A3M files found in $target_mmseq_directory"
     fi
 done
 
